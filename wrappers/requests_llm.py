@@ -1,7 +1,7 @@
 import requests
 from openai import OpenAI
 
-open_ai_key = 'sk-proj-BcGcUoJxmhxOLeDsgnxOT3BlbkFJ0zZJFAZpLrd8A8C54hRa'
+open_ai_key = ''
 client = OpenAI(api_key=open_ai_key)
 
 

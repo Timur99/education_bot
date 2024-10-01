@@ -2,12 +2,17 @@ import json
 import requests
 from openai import OpenAI
 from scriptss.config import load_credentials, DB_CREDENTIALS, TGRM_BOT_CREDENTIALS, OPENAI_API
+from dotenv import load_dotenv
+import os
 
+
+# Загрузка переменных окружения
+load_dotenv()
 
 
 def process_text(prompt):
-    creds = load_credentials(OPENAI_API)
-    open_ai_key = creds['api']
+    #creds = load_credentials(OPENAI_API)
+    open_ai_key = os.getenv('OPENAI')  #creds['api']
 
     client = OpenAI(api_key=open_ai_key)
 
