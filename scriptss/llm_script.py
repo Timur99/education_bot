@@ -12,7 +12,9 @@ load_dotenv()
 
 def process_text(prompt):
     #creds = load_credentials(OPENAI_API)
-    open_ai_key = os.getenv('OPENAI')  #creds['api']
+    #open_ai_key = os.getenv('OPENAI')  #creds['api']
+
+    open_ai_key = os.getenv('OPENAI', load_credentials(OPENAI_API)['api'])
 
     client = OpenAI(api_key=open_ai_key)
 
@@ -37,6 +39,11 @@ def get_tasks(objects, rang):
     promt = f'''
         Придумай задачу с 4 вариантами ответа по {objects}
         Сложность задачи {rang}
+        
+        Формат ответа
+        Задача:
+        Варианты ответа:
+        Ответ:
     '''
 
     t = promt_context(promt)
