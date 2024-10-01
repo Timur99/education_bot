@@ -14,7 +14,7 @@ def process_text(prompt):
     #creds = load_credentials(OPENAI_API)
     #open_ai_key = os.getenv('OPENAI')  #creds['api']
 
-    open_ai_key = os.getenv('OPENAI', load_credentials(OPENAI_API)['api'])
+    open_ai_key = os.getenv('OPENAI') #, load_credentials(OPENAI_API)['api'])
 
     client = OpenAI(api_key=open_ai_key)
 
