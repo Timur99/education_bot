@@ -42,7 +42,7 @@ load_dotenv()
 
 # Объект бота
 
-TOKEN = os.getenv('TG', load_credentials(TGRM_BOT_CREDENTIALS)['tg_test'])
+TOKEN = os.getenv('TG') #, load_credentials(TGRM_BOT_CREDENTIALS)['tg_test'])
 bot = Bot(token=TOKEN)
 
 # Диспетчер
